@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Код дня — знак, число, действие</title>
+    <meta
+      name="description"
+      content="Персональный ежедневный код дня: знак, личное число, формула дня, lucky-элементы и вечерняя отметка."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__copy">
+          <span class="eyebrow">Ежедневный персональный план дня</span>
+          <h1>Твой день: знак + число + действие</h1>
+          <p class="hero__lead">
+            Быстрый прогноз на утро, практические подсказки на день и вечерняя отметка,
+            чтобы сервис запоминал, что у тебя реально срабатывает.
+          </p>
+          <div class="hero__chips">
+            <span>5–10 секунд на вход</span>
+            <span>Личное число дня</span>
+            <span>Что делать / чего избегать</span>
+            <span>История совпадений</span>
+          </div>
+        </div>
+        <aside class="hero__panel card">
+          <div class="hero__panel-head">
+            <p class="hero__panel-label">Сегодняшний формат</p>
+            <strong>Код дня</strong>
+          </div>
+          <ul class="feature-list compact">
+            <li>Знак и место в рейтинге</li>
+            <li>Личное число + энергия даты</li>
+            <li>Формула дня и оценка</li>
+            <li>Lucky color / hour / action</li>
+            <li>Вечерняя отметка “сбылось?”</li>
+          </ul>
+        </aside>
+      </header>
+
+      <main>
+        <section class="onboarding card" id="profile-card">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Старт за минуту</span>
+              <h2>Собери свой персональный код дня</h2>
+            </div>
+            <p>
+              Введи имя и дату рождения. Сервис сохранит профиль локально и будет вести
+              историю прогнозов прямо в браузере.
+            </p>
+          </div>
+
+          <form id="profile-form" class="profile-form">
+            <label>
+              Имя
+              <input type="text" name="name" placeholder="Например, Алина" required maxlength="24" />
+            </label>
+            <label>
+              Дата рождения
+              <input type="date" name="birthdate" required />
+            </label>
+            <button type="submit" class="button button--primary">Показать мой день</button>
+          </form>
+        </section>
+
+        <section class="dashboard hidden" id="dashboard">
+          <div class="summary-grid">
+            <article class="card summary-card summary-card--main">
+              <div class="summary-card__topline">
+                <span id="today-label">Сегодня</span>
+                <span id="day-score-badge" class="score-badge">8.4/10</span>
+              </div>
+              <h2 id="greeting">Привет, твой день готов</h2>
+              <p id="headline-advice" class="headline-advice"></p>
+              <div class="summary-card__stats">
+                <div>
+                  <span>Знак</span>
+                  <strong id="sign-name">—</strong>
+                </div>
+                <div>
+                  <span>Рейтинг дня</span>
+                  <strong id="sign-rank">#—</strong>
+                </div>
+                <div>
+                  <span>Личное число</span>
+                  <strong id="personal-number">—</strong>
+                </div>
+                <div>
+                  <span>Энергия даты</span>
+                  <strong id="date-energy">—</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="card formula-card">
+              <span class="section-label">Формула дня</span>
+              <h3 id="formula-title">4 / 8 — день структуры и контроля</h3>
+              <p id="formula-description"></p>
+              <div class="formula-grid">
+                <div>
+                  <span>Усилит день</span>
+                  <strong id="boost-text"></strong>
+                </div>
+                <div>
+                  <span>Ослабит день</span>
+                  <strong id="drain-text"></strong>
+                </div>
+                <div>
+                  <span>Где шанс</span>
+                  <strong id="chance-text"></strong>
+                </div>
+                <div>
+                  <span>Где риск</span>
+                  <strong id="risk-text"></strong>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <section class="cards-grid cards-grid--five">
+            <article class="card metric-card">
+              <span class="section-label">Lucky color</span>
+              <h3 id="lucky-color">—</h3>
+              <p id="lucky-color-note"></p>
+            </article>
+            <article class="card metric-card">
+              <span class="section-label">Lucky number</span>
+              <h3 id="lucky-number">—</h3>
+              <p>Число, на которое сегодня можно опереться в мелких решениях.</p>
+            </article>
+            <article class="card metric-card">
+              <span class="section-label">Lucky item</span>
+              <h3 id="lucky-item">—</h3>
+              <p id="lucky-item-note"></p>
+            </article>
+            <article class="card metric-card">
+              <span class="section-label">Час силы</span>
+              <h3 id="lucky-hour">—</h3>
+              <p>Под это окно лучше ставить важный разговор или основное действие.</p>
+            </article>
+            <article class="card metric-card">
+              <span class="section-label">Действие дня</span>
+              <h3 id="lucky-action">—</h3>
+              <p id="lucky-action-note"></p>
+            </article>
+          </section>
+
+          <section class="depth-grid">
+            <article class="card">
+              <div class="section-heading slim">
+                <div>
+                  <span class="section-label">Что делать сегодня</span>
+                  <h3>Практический фокус</h3>
+                </div>
+              </div>
+              <ul id="do-list" class="feature-list"></ul>
+            </article>
+
+            <article class="card">
+              <div class="section-heading slim">
+                <div>
+                  <span class="section-label">Чего избегать</span>
+                  <h3>Зона риска</h3>
+                </div>
+              </div>
+              <ul id="avoid-list" class="feature-list"></ul>
+            </article>
+          </section>
+
+          <section class="depth-grid depth-grid--three">
+            <article class="card">
+              <span class="section-label">Личное число дня</span>
+              <h3 id="number-title">—</h3>
+              <p id="number-meaning"></p>
+              <div class="mini-columns">
+                <div><span>Работа</span><strong id="number-work"></strong></div>
+                <div><span>Деньги</span><strong id="number-money"></strong></div>
+                <div><span>Любовь</span><strong id="number-love"></strong></div>
+                <div><span>Настроение</span><strong id="number-mood"></strong></div>
+              </div>
+            </article>
+
+            <article class="card">
+              <span class="section-label">Совместимость дня</span>
+              <h3 id="compatibility-title">—</h3>
+              <ul id="compatibility-list" class="feature-list"></ul>
+            </article>
+
+            <article class="card">
+              <span class="section-label">Мини-вопрос дня</span>
+              <h3>Быстрый вердикт</h3>
+              <div class="question-box">
+                <label>
+                  Выбери ситуацию
+                  <select id="question-select"></select>
+                </label>
+                <div class="answer-box">
+                  <strong id="answer-verdict"></strong>
+                  <p id="answer-details"></p>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <section class="depth-grid depth-grid--three">
+            <article class="card">
+              <span class="section-label">Вектор недели</span>
+              <h3>Смотри чуть дальше, чем сегодня</h3>
+              <ul id="week-list" class="feature-list"></ul>
+            </article>
+
+            <article class="card">
+              <span class="section-label">Вечерняя отметка</span>
+              <h3>Сбылось ли сегодня?</h3>
+              <div class="feedback-buttons" id="feedback-buttons">
+                <button class="button button--ghost" data-feedback="Сбылось">Сбылось</button>
+                <button class="button button--ghost" data-feedback="Частично">Частично</button>
+                <button class="button button--ghost" data-feedback="Не сбылось">Не сбылось</button>
+              </div>
+              <p id="feedback-note" class="feedback-note">
+                Отметка сохранится в истории и повлияет на твою персональную статистику.
+              </p>
+            </article>
+
+            <article class="card">
+              <span class="section-label">Telegram-ритуал</span>
+              <h3>Как использовать уведомления</h3>
+              <ul class="feature-list">
+                <li>Утром: “Твой код дня готов”.</li>
+                <li>Днем: “Сегодня лучшее окно для разговора — 14:00–15:30”.</li>
+                <li>Вечером: “Отметь, что реально совпало”.</li>
+              </ul>
+            </article>
+          </section>
+        </section>
+
+        <section class="history card hidden" id="history-card">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Личный кабинет</span>
+              <h2>История, streak и паттерны</h2>
+            </div>
+            <p>Даже в MVP история формирует ощущение, что сервис тебя знает и становится полезнее.</p>
+          </div>
+          <div class="stats-row">
+            <div class="stat-pill">
+              <span>Дней в истории</span>
+              <strong id="history-count">0</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Текущий streak</span>
+              <strong id="streak-count">0</strong>
+            </div>
+            <div class="stat-pill">
+              <span>Сбылось</span>
+              <strong id="success-rate">0%</strong>
+            </div>
+          </div>
+          <div id="history-list" class="history-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
