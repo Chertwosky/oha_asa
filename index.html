@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Код дня — персональный план дня</title>
+    <meta
+      name="description"
+      content="Концепт современного сервиса: ежедневный код дня, формула дня, lucky-элементы, практические советы и вечерняя обратная связь."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#hero">
+          <span class="brand-mark">✦</span>
+          <span>
+            <strong>Код дня</strong>
+            <small>знак + число + действие</small>
+          </span>
+        </a>
+        <nav class="topnav">
+          <a href="#value">Ценность</a>
+          <a href="#screens">Экраны</a>
+          <a href="#mvp">MVP</a>
+          <a href="#retention">Retention</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="hero">
+          <div class="hero-copy glass-card">
+            <span class="eyebrow">Концепт сайта для ежедневного возврата</span>
+            <h1>Не просто гороскоп, а <span>персональный план дня</span>.</h1>
+            <p class="lead">
+              Сервис объединяет быстрый ритуал в духе TV Asahi и глубину персонализации как у Numeroscop:
+              утром — прогноз, днем — мини-решения, вечером — отметка “сбылось?”.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#prototype">Посмотреть прототип первого экрана</a>
+              <a class="button button-secondary" href="#monetization">Монетизация</a>
+            </div>
+            <div class="metrics-row">
+              <article>
+                <strong>5–10 сек</strong>
+                <span>до первого “это про меня”</span>
+              </article>
+              <article>
+                <strong>3 касания</strong>
+                <span>утро → день → вечер</span>
+              </article>
+              <article>
+                <strong>MVP-ready</strong>
+                <span>без перегруза эзотерикой</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="daily-card glass-card" id="prototype">
+            <div class="daily-card__top">
+              <div>
+                <span class="eyebrow">Мой день</span>
+                <h2>Алина, твой день на <span>8.4/10</span></h2>
+              </div>
+              <div class="badge">#3 среди знаков</div>
+            </div>
+
+            <div class="identity-grid">
+              <div class="identity-item">
+                <span>Знак</span>
+                <strong>Лев</strong>
+              </div>
+              <div class="identity-item">
+                <span>Личное число</span>
+                <strong>4</strong>
+              </div>
+              <div class="identity-item">
+                <span>Энергия даты</span>
+                <strong>8</strong>
+              </div>
+              <div class="identity-item">
+                <span>Формула дня</span>
+                <strong>4/8</strong>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <p class="formula-title">Формула дня: 4/8 — день структуры, контроля и ясных решений</p>
+              <p>
+                Ставь на конкретику: сегодня лучше работают договоренности, порядок, закрытие задач и спокойные
+                разговоры по делу.
+              </p>
+            </div>
+
+            <div class="lucky-grid">
+              <div class="lucky-item"><span>Цвет силы</span><strong>Синий</strong></div>
+              <div class="lucky-item"><span>Число</span><strong>4</strong></div>
+              <div class="lucky-item"><span>Час силы</span><strong>14:00–15:30</strong></div>
+              <div class="lucky-item"><span>Предмет</span><strong>Блокнот</strong></div>
+              <div class="lucky-item"><span>Действие</span><strong>Уточнить и зафиксировать</strong></div>
+            </div>
+
+            <div class="advice-grid">
+              <article>
+                <h3>Что делать</h3>
+                <ul>
+                  <li>Закрыть одну зависшую задачу</li>
+                  <li>Договориться один на один</li>
+                  <li>Навести порядок в мелочах</li>
+                </ul>
+              </article>
+              <article>
+                <h3>Чего избегать</h3>
+                <ul>
+                  <li>Не спорить на эмоциях</li>
+                  <li>Не распыляться на все сразу</li>
+                  <li>Не покупать импульсивно вечером</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="feedback-row">
+              <span>Вечером вернись и отметь, сбылось ли сегодня.</span>
+              <div class="feedback-buttons">
+                <button type="button" class="button button-secondary vote" data-vote="Сбылось">Сбылось</button>
+                <button type="button" class="button button-secondary vote" data-vote="Частично">Частично</button>
+                <button type="button" class="button button-secondary vote" data-vote="Не сбылось">Не сбылось</button>
+              </div>
+              <div class="vote-status" aria-live="polite">Пока без отметки</div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="value">
+          <div class="section-heading">
+            <span class="eyebrow">Главная ценность</span>
+            <h2>Пользователь получает не предсказание, а ориентир на день.</h2>
+            <p>
+              Даже если человек скептически относится к астрологии, продукт работает как красивый ежедневный планер,
+              self-tracking и микрорефлексия: коротко, полезно, про сегодня.
+            </p>
+          </div>
+          <div class="feature-grid three-up">
+            <article class="glass-card feature-card">
+              <h3>Быстрый эффект</h3>
+              <p>Первый экран мгновенно отвечает: кто я сегодня, насколько день удачный и что мне с этим делать.</p>
+            </article>
+            <article class="glass-card feature-card">
+              <h3>Персонализация</h3>
+              <p>Знак, имя, личное число, энергия даты и история оценок складываются в ощущение “сервис знает меня”.</p>
+            </article>
+            <article class="glass-card feature-card">
+              <h3>Практичность</h3>
+              <p>Акцент на действиях: когда говорить, покупать, начинать, чего избегать и где сегодня окно силы.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section dark-section" id="loop">
+          <div class="section-heading">
+            <span class="eyebrow">Ежедневный цикл</span>
+            <h2>Утром — прогноз. Днем — применение. Вечером — обратная связь.</h2>
+          </div>
+          <div class="timeline">
+            <article class="glass-card timeline-card">
+              <span class="timeline-step">01</span>
+              <h3>Утро</h3>
+              <p>Открыть “Код дня”, увидеть оценку, формулу, lucky-набор и главный совет за 10 секунд.</p>
+            </article>
+            <article class="glass-card timeline-card">
+              <span class="timeline-step">02</span>
+              <h3>День</h3>
+              <p>Использовать мини-вопрос дня, час силы, блоки “что делать / чего избегать” и быстрые подсказки.</p>
+            </article>
+            <article class="glass-card timeline-card">
+              <span class="timeline-step">03</span>
+              <h3>Вечер</h3>
+              <p>Отметить исход, сохранить ощущение дня, укрепить привычку и пополнить личную историю.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="screens">
+          <div class="section-heading">
+            <span class="eyebrow">Структура продукта</span>
+            <h2>Экранная логика MVP и следующего шага.</h2>
+          </div>
+          <div class="screens-grid">
+            <article class="glass-card screen-card">
+              <div class="screen-number">01</div>
+              <h3>Лендинг / вход</h3>
+              <p>Обещание ценности, ввод имени и даты рождения, CTA “Узнать мой день”.</p>
+              <ul>
+                <li>Заголовок “Твой день: знак + число + действие”</li>
+                <li>Мини-онбординг без трения</li>
+                <li>Упор на 5–10 секунд до результата</li>
+              </ul>
+            </article>
+            <article class="glass-card screen-card">
+              <div class="screen-number">02</div>
+              <h3>Мой день</h3>
+              <p>Главный экран: оценка дня, место в рейтинге, формула, lucky-элементы и практический слой.</p>
+              <ul>
+                <li>Что делать / чего избегать</li>
+                <li>Час силы и зона риска</li>
+                <li>Кнопка сохранения и подписки</li>
+              </ul>
+            </article>
+            <article class="glass-card screen-card">
+              <div class="screen-number">03</div>
+              <h3>Вечерняя отметка</h3>
+              <p>Сценарий завершения дня и сбор обратной связи для персональных инсайтов.</p>
+              <ul>
+                <li>Сбылось / частично / не сбылось</li>
+                <li>Что совпало сильнее всего</li>
+                <li>Streak и мягкая награда</li>
+              </ul>
+            </article>
+            <article class="glass-card screen-card">
+              <div class="screen-number">04</div>
+              <h3>Личный кабинет</h3>
+              <p>История прогнозов, совпадения, streak, паттерны и вектор недели.</p>
+              <ul>
+                <li>История дней</li>
+                <li>Статистика сфер</li>
+                <li>Анонсы лучших и рискованных дней</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="mvp">
+          <div class="section-heading">
+            <span class="eyebrow">MVP vs. Phase 2</span>
+            <h2>Сначала — быстрый и ясный ежедневный сервис. Потом — глубина.</h2>
+          </div>
+          <div class="split-grid">
+            <article class="glass-card checklist-card">
+              <h3>Что обязательно в MVP</h3>
+              <ul class="checklist">
+                <li>Имя, дата рождения, сохранение профиля</li>
+                <li>Ежедневный рейтинг знаков</li>
+                <li>Короткий прогноз дня</li>
+                <li>Личное число дня</li>
+                <li>Формула дня = знак + число + дата</li>
+                <li>Lucky color / number / item / hour / action</li>
+                <li>Блок “что делать / чего избегать”</li>
+                <li>Вечерняя отметка “сбылось?”</li>
+                <li>Базовая история и streak</li>
+                <li>Концепция Telegram-уведомлений</li>
+              </ul>
+            </article>
+            <article class="glass-card checklist-card">
+              <h3>Что добавить во второй очереди</h3>
+              <ul class="checklist soft">
+                <li>Совместимость дня</li>
+                <li>Прогноз недели и месяца</li>
+                <li>Важные и опасные дни</li>
+                <li>Мини-вопрос дня</li>
+                <li>Шеринг-карточки под Telegram / VK</li>
+                <li>Сценарии по сферам: любовь / работа / деньги</li>
+                <li>Расширенная аналитика совпадений</li>
+                <li>Геймификация streak</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section dark-section" id="retention">
+          <div class="section-heading">
+            <span class="eyebrow">Retention и вирусность</span>
+            <h2>Продукт должен давать причины вернуться утром, днем, вечером, через неделю и через месяц.</h2>
+          </div>
+          <div class="feature-grid two-up">
+            <article class="glass-card feature-card tall">
+              <h3>Retention-механики</h3>
+              <ol>
+                <li><strong>Трехточечный цикл дня:</strong> прогноз → применение → отметка результата.</li>
+                <li><strong>История и паттерны:</strong> сервис становится ценнее с каждым днем использования.</li>
+                <li><strong>Прогнозирование вперед:</strong> лучшие и рискованные дни недели.</li>
+                <li><strong>Умные уведомления:</strong> не “ваш гороскоп готов”, а конкретный повод зайти.</li>
+                <li><strong>Streak:</strong> легкая игровая мотивация без перегруза.</li>
+              </ol>
+            </article>
+            <article class="glass-card feature-card tall">
+              <h3>Механики шаринга</h3>
+              <ol>
+                <li>Карточка “Мой код дня”</li>
+                <li>Карточка “Сегодня мой знак в топ-3”</li>
+                <li>Карточка “Главный совет дня”</li>
+                <li>Совместимость дня как social trigger</li>
+                <li>Мини-вердикты по вопросам “писать / покупать / начинать?”</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="positioning">
+          <div class="section-heading">
+            <span class="eyebrow">Позиционирование и нейминг</span>
+            <h2>Формулировки, которые звучат современно и не скатываются в “желтую эзотерику”.</h2>
+          </div>
+          <div class="split-grid">
+            <article class="glass-card quote-card">
+              <h3>Варианты позиционирования</h3>
+              <ul class="bullet-list">
+                <li>Персональный план дня: знак, число и практический совет</li>
+                <li>Твой ежедневный код дня: что делать, чего избегать и где твоя удача</li>
+                <li>Не просто гороскоп, а личная навигация по дню</li>
+                <li>Твой день: знак + число + действие</li>
+                <li>Персональный прогноз на день без мистического перегруза</li>
+              </ul>
+            </article>
+            <article class="glass-card quote-card">
+              <h3>Сильные названия модулей</h3>
+              <div class="tag-cloud">
+                <span>Мой день</span>
+                <span>Код дня</span>
+                <span>Формула дня</span>
+                <span>Энергия дня</span>
+                <span>Код удачи</span>
+                <span>Час силы</span>
+                <span>Зона риска</span>
+                <span>Что делать</span>
+                <span>Чего избегать</span>
+                <span>История дней</span>
+                <span>Вектор недели</span>
+                <span>Вечерняя отметка</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="monetization">
+          <div class="section-heading">
+            <span class="eyebrow">Монетизация</span>
+            <h2>Зарабатывать можно, не ломая привычку ежедневного возврата.</h2>
+          </div>
+          <div class="feature-grid three-up">
+            <article class="glass-card feature-card">
+              <h3>Freemium ядро</h3>
+              <p>Ежедневный вход, формула дня и вечерняя отметка остаются бесплатными как основа ритуала.</p>
+            </article>
+            <article class="glass-card feature-card">
+              <h3>Premium-глубина</h3>
+              <p>Неделя, месяц, опасные дни, совместимость, архив и личные паттерны — логичное платное расширение.</p>
+            </article>
+            <article class="glass-card feature-card">
+              <h3>Telegram Premium</h3>
+              <p>Расширенные уведомления, ранний доступ к прогнозу и быстрые ответы на мини-вопросы.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
